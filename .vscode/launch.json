@@ -1,0 +1,42 @@
+{
+  "configurations": [
+    {
+      "name": "Main",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      //   "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "runtimeExecutable": "npm",
+      //   "windows": {
+      //     "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      //   },
+      //   "args": ["."],
+      //   "outputCapture": "std",
+      "runtimeArgs": ["run", "dev:electron"],
+      "env": {
+        "DEV_URL":"http://localhost:3000"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Renderer",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "autoAttachChildProcesses": true,
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"],
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "cwd": "${workspaceFolder}/ui"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug All",
+      "configurations": ["Main", "Renderer"],
+      "presentation": {
+        "order": 1
+      }
+    }
+  ]
+}
