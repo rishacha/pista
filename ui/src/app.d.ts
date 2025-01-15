@@ -8,6 +8,13 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
-}
 
+	interface Window {
+		api: Api;
+	}
+}
+interface Api {
+	send: (channel: string, data: unknown) => void;
+	receive: (channel: string, func: (...args: unknown[]) => void) => void;
+}
 export {};

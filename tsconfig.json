@@ -11,6 +11,6 @@
   },
   "include": [
     "src/**/*", 
-    "global.d.ts"
+    "ui/src/app.d.ts"
   ]
 }

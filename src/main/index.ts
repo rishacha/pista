@@ -18,8 +18,6 @@ function createWindow() {
     mainWindow.loadFile(path.join(__dirname, '../../ui/build/index.html'));
   }
 
-  
-
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

@@ -1,7 +1,10 @@
 <script lang="ts">
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
-	let xya = 'hello'
+	let preloader = false;
+	window.api.send('load-preloader', () => {
+		preloader = true;
+	});
 </script>
 
 <svelte:head>
