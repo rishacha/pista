@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev npm run dev:all",
     "dev:all": "concurrently -n=svelte,electron -c='#ff3e00',blue \"npm run dev:svelte\" \"npm run dev:electron\"",
-    "dev:svelte": "cd ./ui/ && vite dev",
-    "dev:electron": "tsc && cross-env NODE_ENV=dev electron ./dist/main/index.js",
+    "dev:svelte": "cd ./ui/ && vite dev --port 3000",
+    "dev:electron": "tsc && cross-env NODE_ENV=dev electron ./dist/main/index.js --remote-debugging-port=9222",
     "build": "cross-env NODE_ENV=production npm run build:svelte && npm run build:electron",
     "build:svelte": "cd ./ui/ && vite build",
     "build:electron": "tsc && electron-builder build --mac --arm64 --config build.config.json",

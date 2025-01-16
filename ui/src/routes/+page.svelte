@@ -2,9 +2,18 @@
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcomeFallback from '$lib/images/svelte-welcome.png';
 	let preloader = false;
-	window.api.send('load-preloader', () => {
+
+	// if (browser) {
+	// onMount(() => {
+	console.log(window.innerWidth);
+	window.api.send('ping', null);
+	window.api.receive('pong', () => {
+		console.log("Received pong !")
 		preloader = true;
 	});
+	// });
+
+	// }
 </script>
 
 <svelte:head>

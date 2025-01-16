@@ -12,15 +12,15 @@
       //   },
       //   "args": ["."],
       //   "outputCapture": "std",
-      "runtimeArgs": ["run", "dev:electron"],
+      "runtimeArgs": ["run", "dev"],
       "env": {
-        "DEV_URL":"http://localhost:3000"
+        "DEV_URL": "http://localhost:3000",
       }
     },
     {
       "type": "node",
       "request": "launch",
-      "name": "Renderer",
+      "name": "Renderer Sveltekit",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "autoAttachChildProcesses": true,
@@ -28,6 +28,17 @@
       "skipFiles": ["<node_internals>/**"],
       "outFiles": ["${workspaceFolder}/**/*.js"],
       "cwd": "${workspaceFolder}/ui"
+    },
+    {
+      "name": "Renderer",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}/ui/",
+      "timeout": 60000,
+      "presentation": {
+        "hidden": true
+      }
     }
   ],
   "compounds": [
