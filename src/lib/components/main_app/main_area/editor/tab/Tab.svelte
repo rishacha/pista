@@ -1,0 +1,7 @@
+<script lang="ts">
+  import NavBreadcrumb from "./NavBreadcrumb.svelte";
+import PageCover from "./PageCover.svelte";
+</script>
+<NavBreadcrumb></NavBreadcrumb>
+<PageCover></PageCover>
+<h1>Welcomespdfidnaosdinfaodsifnoasdifnaosdifnaosdifnaosdifnaodsifnaodsifnasodifnasodifnasodifnaosdifnasodifnasodifnasodifnaosdinfaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdinfaosdinfoasidnfoasdifnaosdifnaosdifnaosdinfaosdinfaosdifnaosdinfaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdifnaosdinfaosdinfoasdinfoasdifn</h1>
